@@ -9,3 +9,4 @@ class CreditCheckTest < Minitest::Test
   end
 
 end
+
