@@ -4,4 +4,8 @@ require './lib/credit_check'
 
 class CreditCheckTest < Minitest::Test
 
+  def test_case_name
+
+  end
+
 end
