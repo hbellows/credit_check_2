@@ -1,9 +1,9 @@
 class CreditCheck
-  attr_reader :card_number
-
-  def initialize #(card_number)
-    @card_number = card_number.to_i
-  end
+  # attr_reader :card_number
+  #
+  # def initialize #(card_number)
+  #   @card_number = card_number.to_i
+  # end
 
   def valid_number?(card_number)
     converted = convert_card_number(card_number)
