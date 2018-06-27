@@ -1,17 +1,4 @@
 class CreditCheck
-  # attr_reader :card_number
-  #
-  # def initialize #(card_number)
-  #   @card_number = card_number.to_i
-  # end
-
-  def valid_number?(card_number)
-    converted = convert_card_number(card_number)
-    doubled = double_odd_index(converted)
-    summed_digits = sum_double_digit_numbers(doubled)
-    totaled_digits = sum_all_digits(summed_digits)
-    validate_number(totaled_digits)
-  end
 
   def validation_output(card_number)
     if valid_number?(card_number)
@@ -21,8 +8,16 @@ class CreditCheck
     end
   end
 
+  def valid_number?(card_number)
+    converted = convert_card_number(card_number)
+    doubled = double_odd_index(converted)
+    summed_digits = sum_double_digit_numbers(doubled)
+    totaled_digits = sum_all_digits(summed_digits)
+    validate_number(totaled_digits)
+  end
+
   def convert_card_number(card_number)
-    card_number.to_i.digits
+    card_number.digits
   end
 
   def double_odd_index(converted)
@@ -56,6 +51,5 @@ class CreditCheck
       false
     end
   end
-
 
 end
