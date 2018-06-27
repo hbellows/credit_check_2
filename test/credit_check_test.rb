@@ -6,7 +6,7 @@ class CreditCheckTest < Minitest::Test
 
   def test_it_converts_card_number_to_an_array_of_integers
     # skip
-    card_number = 5541808923795240
+    card_number = '5541808923795240'
     credit_check = CreditCheck.new #(card_number)
 
     result = [0, 4, 2, 5, 9, 7, 3, 2, 9, 8, 0, 8, 1, 4, 5, 5]
