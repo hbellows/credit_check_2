@@ -59,7 +59,7 @@ class CreditCheck
   end
 
   def sum_all_digits(summed_digits)
-    totaled_digits = summed_digits.sum
+    summed_digits.sum
   end
 
   def validate_number(totaled_digits)
