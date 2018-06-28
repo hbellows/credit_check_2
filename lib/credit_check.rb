@@ -28,23 +28,27 @@ class CreditCheck
   end
 
   def double_odd_index(converted)
-    converted.map.with_index do |digit, index|
+    doubled = []
+    converted.each.with_index do |digit, index|
       if index.odd?
-        digit * 2
+        doubled << digit * 2
       else
-        digit
+        doubled << digit
       end
     end
+    doubled
   end
 
   def sum_double_digit_numbers(doubled)
-    doubled.map do |number|
+    summed_digits = []
+    doubled.each do |number|
       if number > 9
-        number - 9
+        summed_digits << number - 9
       else
-        number
+        summed_digits << number
       end
     end
+    summed_digits
   end
 
   def check_sum_digit(summed_digits)
