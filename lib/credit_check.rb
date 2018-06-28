@@ -16,16 +16,23 @@ class CreditCheck
     validate_number(totaled_digits)
   end
 
+  def calculate_check_sum_digit(card_number)
+    converted = convert_card_number(card_number)
+    doubled = double_odd_index(converted)
+    summed_digits = sum_double_digit_numbers(doubled)
+    check_sum_digit(summed_digits)
+  end
+
   def convert_card_number(card_number)
     card_number.digits
   end
 
   def double_odd_index(converted)
-    converted.map.with_index do |number, index|
+    converted.map.with_index do |digit, index|
       if index.odd?
-        number * 2
+        digit * 2
       else
-        number
+        digit
       end
     end
   end
@@ -40,6 +47,17 @@ class CreditCheck
     end
   end
 
+  def check_sum_digit(summed_digits)
+    summed_digits.shift
+    total = summed_digits.sum
+    remainder = total % 10
+    if remainder == 0
+      0
+    else
+      10 - remainder
+    end
+  end
+
   def sum_all_digits(summed_digits)
     totaled_digits = summed_digits.sum
   end
@@ -51,5 +69,4 @@ class CreditCheck
       false
     end
   end
-
 end
