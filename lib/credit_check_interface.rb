@@ -1,4 +1,4 @@
-require './lib/credit_check'
+require './lib/ credit_check'
 
 puts "*" * 50
 puts "\n"

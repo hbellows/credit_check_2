@@ -19,7 +19,7 @@ class CreditCheckTest < Minitest::Test
     credit_check = CreditCheck.new
 
     converted = [0, 4, 2, 5, 9, 7, 3, 2, 9, 8, 0, 8, 1, 4, 5, 5]
-
+ 
     result = [0, 8, 2, 10, 9, 14, 3, 4, 9, 16, 0, 16, 1, 8, 5, 10]
 
     assert_equal result, credit_check.double_odd_index(converted)
